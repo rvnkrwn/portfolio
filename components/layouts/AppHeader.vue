@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div id="highlight" class="fixed z-[99999] h-12 w-12 rounded-full border border-base-content" />
+    <div id="highlight" class="hidden md:block fixed z-[99999] h-12 w-12 rounded-full border border-base-content" />
     <AppPreloading />
     <header class="fixed z-[9999] w-full h-fit px-[1em] py-[1em] overflow-hidden">
       <div class="container mx-auto relative p-[1em] backdrop-blur rounded-box flex justify-between items-center">
         <NuxtLink to="/">
-          <div class="montserrat font-semibold uppercase flex items-center gap-1">
+          <div class="protest-guerrilla-regular font-semibold uppercase flex items-center gap-1">
             <h1>{{ appName?.split(' ')[0] }}</h1>
             <span>-</span>
             <div class="inner-headings h-[30px] overflow-hidden leading-[30px]">
@@ -29,7 +29,7 @@
           </div>
         </div>
         <nav class="absolute top-14 items-center w-full min-h-[80vh] left-0 p-[1em] hidden">
-          <ul class="text-5xl font-extrabold md:text-7xl md:font-black">
+          <ul class="text-5xl protest-guerrilla-regular tracking-wider font-extrabold md:text-7xl md:font-black">
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/">Home
               </NuxtLink>

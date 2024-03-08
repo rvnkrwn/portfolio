@@ -12,7 +12,7 @@
     </section>
     <section class="wrapper z-10 backdrop-blur">
       <div class="px-[1em] overflow-y-auto min-h-full h-fit flex flex-col items-center justify-center text-center">
-        <h1 v-if="appName" class="object" data-value="3">
+        <h1 v-if="appName" class="object press-start-2p-regular" data-value="3">
           <span v-for="(char, i) in appName" :key="i" :class="[i % 2 ? 'hover:text-primary' : '', i % 3 ? 'hover:text-accent' : '', i % 1 ? 'hover:text-secondary' : '', 'transition-all text-5xl font-black md:text-7xl']">{{ char }}</span>
         </h1>
         <br>
