@@ -7,10 +7,10 @@
           <span v-for="(char, i) in appName" :key="i" :class="[i % 2 ? 'hover:text-primary' : '', i % 3 ? 'hover:text-accent' : '', i % 1 ? 'hover:text-secondary' : '', 'transition-all text-5xl font-black md:text-7xl']">{{ char }}</span>
         </h1>
         <br>
-        <p class="w-4/5 text-lg font-light tracking-wide">
-          I am a computer science student at Telkom University Purwokerto, specializing in web development with a keen interest in both frontend and backend technologies....
+        <p class=" text-lg font-light tracking-wide md:w-[50%]">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa delectus illum inventore necessitatibus porro quaerat quia quidem quisquam sapiente ut.
         </p>
-        <div class="p-4 flex gap-4">
+        <div class="p-4 flex gap-4 flex-wrap justify-center">
           <NuxtLink to="/aboutMe" class="btn btn-outline border-2 rounded-box px-7">Learn More</NuxtLink>
           <NuxtLink to="/contacts" class="btn btn-neutral border-2 rounded-box px-7">Contacts</NuxtLink>
         </div>

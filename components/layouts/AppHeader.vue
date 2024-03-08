@@ -1,8 +1,8 @@
 <template>
   <div>
     <AppPreloading />
-    <header class="fixed z-[999] w-full h-fit px-[1em] py-[1em] overflow-hidden">
-      <div class="container mx-auto relative p-[1em] flex justify-between items-center">
+    <header class="fixed z-[9999] w-full h-fit px-[1em] py-[1em] overflow-hidden">
+      <div class="container mx-auto relative p-[1em] bg-base-300 rounded-box flex justify-between items-center">
         <NuxtLink to="/">
           <div class="montserrat font-semibold uppercase flex items-center gap-1">
             <h1>{{ appName?.split(' ')[0] }}</h1>
