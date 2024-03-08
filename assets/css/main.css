@@ -5,12 +5,8 @@
 @tailwind utilities;
 
 
-body {
-    @apply bg-base-200
-}
-
 .wrapper {
-    @apply container mx-auto h-screen w-full py-24 px-[1em]
+    @apply container mx-auto h-screen min-h-screen w-full py-24 px-[1em]
 }
 
 /* fonts */

@@ -1,8 +1,9 @@
 <template>
   <div>
+    <div id="highlight" class="fixed z-[99999] h-12 w-12 rounded-full border border-base-content" />
     <AppPreloading />
     <header class="fixed z-[9999] w-full h-fit px-[1em] py-[1em] overflow-hidden">
-      <div class="container mx-auto relative p-[1em] bg-base-300 rounded-box flex justify-between items-center">
+      <div class="container mx-auto relative p-[1em] backdrop-blur rounded-box flex justify-between items-center">
         <NuxtLink to="/">
           <div class="montserrat font-semibold uppercase flex items-center gap-1">
             <h1>{{ appName?.split(' ')[0] }}</h1>
@@ -28,35 +29,29 @@
           </div>
         </div>
         <nav class="absolute top-14 items-center w-full min-h-[80vh] left-0 p-[1em] hidden">
-          <ul class="text-5xl font-bold md:text-7xl md:font-black">
+          <ul class="text-5xl font-extrabold md:text-7xl md:font-black">
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/">Home
-
               </NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/aboutMe">About Me
-
               </NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/experiences">Experiences
-
               </NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/skills">Skills
-
               </NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/blogs">Blogs
-
               </NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/contacts">Contacts
-
               </NuxtLink>
             </li>
           </ul>
@@ -92,6 +87,18 @@ onMounted(() => {
     })
     navLink.addEventListener('click', menuFunction)
   })
+
+  gsap.set('#highlight', {x: 4, color: "white", duration: 3});
+
+  document.addEventListener("mousemove", (event) => {
+    // Update the animation properties based on the mouse position
+    gsap.to('#highlight', {
+      duration: 2,
+      x: event.clientX,
+      y: event.clientY,
+      ease: 'elastic'
+    });
+  });
 })
 
 const menuFunction = () => {
