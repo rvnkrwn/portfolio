@@ -1,5 +1,6 @@
 <template>
   <div>
+    <AppPreloading />
     <header class="fixed z-[999] w-full h-fit px-[1em] py-[1em] overflow-hidden">
       <div class="container mx-auto relative p-[1em] flex justify-between items-center">
         <NuxtLink to="/">
@@ -13,7 +14,6 @@
               FE Dev <br/>
               {{ appName?.split(' ')[1] }} <br/>
             </span>
-              <hr class="border border-base-content w-10">
             </div>
           </div>
         </NuxtLink>
@@ -70,12 +70,12 @@
 import {gsap} from "gsap"
 import {Icon} from "@iconify/vue";
 
-const config = useRuntimeConfig()
+// const config = useRuntimeConfig()
 const darkTheme = ref(false)
 const isOpen = ref(false)
 
 const appName = computed(() => {
-  return config.appName
+  return "Revan Kurniawan"
 })
 
 onMounted(() => {

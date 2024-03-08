@@ -28,7 +28,10 @@ onMounted(() => {
     opacity: 0,
     duration: 0.5,
     onComplete: () => {
-      document.querySelector('#preloader')?.classList.add('hidden')
+      const element = document.getElementById("preloader");
+      if (element) {
+        element.parentNode?.removeChild(element);
+      }
     }
   }, '-=0.6');
 })
