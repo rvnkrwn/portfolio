@@ -2,8 +2,8 @@
   <div>
     <div id="highlight" class="hidden md:block fixed z-[99999] h-12 w-12 rounded-full border border-base-content" />
     <AppPreloading />
-    <header class="fixed z-[9999] w-full h-fit px-[1em] py-[1em] overflow-hidden">
-      <div class="container mx-auto relative p-[1em] rounded-box flex justify-between items-center hover:backdrop-blur">
+    <header class="fixed z-[9999] w-full h-fit bg-base-300 px-[1em] py-[1em] overflow-hidden">
+      <div class="container mx-auto flex justify-between items-center">
         <NuxtLink to="/">
           <div class="protest-guerrilla-regular font-semibold text-xl uppercase flex items-center gap-1">
             <h1 class="hover:underline">{{ appName?.split(' ')[0] }}</h1>
@@ -28,11 +28,12 @@
             <Icon v-else height="24" icon="line-md:sunny-outline-to-moon-alt-loop-transition" width="24"/>
           </div>
         </div>
-        <nav class="absolute top-12 items-center w-full min-h-[80vh] left-0 p-[1em] hidden">
-          <div class="absolute right-10 top-16">
+      </div>
+      <nav class="container mx-auto items-center h-full left-0 p-[1em] relative hidden overflow-hidden">
+          <div class="absolute right-16 top-20">
             <p class="press-start-2p-regular">{{time}}</p>
           </div>
-          <ul class="text-5xl protest-guerrilla-regular tracking-wider font-extrabold md:text-7xl md:font-black">
+          <ul class="text-5xl -mt-20 protest-guerrilla-regular tracking-wider font-extrabold md:text-7xl md:font-black">
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/">Home
               </NuxtLink>
@@ -58,19 +59,18 @@
               </NuxtLink>
             </li>
           </ul>
-          <ul class="absolute bottom-4 grid grid-cols-5 gap-2 border-b-2 border-base-content/70 p-1 md:border-r-2 md:border-b-0 md:grid-cols-1 md:right-0">
+          <ul class="absolute bottom-28 grid grid-cols-5 gap-2 border-b-2 border-base-content/70 p-1 md:border-b-0 md:grid-cols-1 md:right-0">
             <li class="nav-item"><NuxtLink to="https://instagram.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:instagram" width="36" height="36" /></NuxtLink></li>
             <li class="nav-item"><NuxtLink to="https://github.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:github" width="36" height="36" /></NuxtLink></li>
             <li class="nav-item"><NuxtLink to="https://www.linkedin.com/in/rvnkrwn/" class="nav-link opacity-70"><Icon icon="mdi:linkedin" width="36" height="36" /></NuxtLink></li>
             <li class="nav-item"><NuxtLink to="https://codepen.io/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:codepen" width="36" height="36" /></NuxtLink></li>
             <li class="nav-item"><NuxtLink to="mailto:rvnkrwn@gmail.com" class="nav-link opacity-70"><Icon icon="mdi:email" width="36" height="36" /></NuxtLink></li>
           </ul>
-          <div class="absolute -bottom-10 montserrat font-semibold text-sm opacity-70 ">
+          <div class="absolute bottom-14 montserrat font-semibold text-sm opacity-70 ">
             <p class="press-start-2p-regular">{{appName}}</p>
             <p>Copyright &copy; {{year}}</p>
           </div>
         </nav>
-      </div>
     </header>
   </div>
 </template>
@@ -137,6 +137,7 @@ const menuFunction = () => {
   const header = document.querySelector('header')
   const navItems = document.querySelectorAll('.nav-item')
   const navbar = document.querySelector('nav')
+  const navAbsoluteContent = navbar?.querySelectorAll('.absolute')
   if (navbar?.classList.contains('hidden')) {
     tl.to(header, {
       height: '100dvh',
@@ -151,18 +152,31 @@ const menuFunction = () => {
             opacity: 0,
             translateY: 50
           }, {
-            duration: 0.2,
+            duration: 0.1,
             opacity: 1,
             translateY: 0
           })
         })
       }
     })
+    navAbsoluteContent?.forEach((nac) => {
+      tl.fromTo(nac, {
+        opacity: 0
+      },{
+        duration: 0.1,
+        opacity: 1
+      })
+    })
   } else {
+    navAbsoluteContent?.forEach((nac) => {
+      tl.to(nac, 0.1,{
+        opacity: 0
+      })
+    })
     tl.to(header, {
       height: 'auto',
       duration: 0.5,
-      delay: 0.2,
+      delay: 0,
       onComplete: () => {
         header?.classList.remove('bg-base-300')
         navbar?.classList.replace('flex', 'hidden')
