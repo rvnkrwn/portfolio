@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <nav class="container mx-auto items-center h-full left-0 p-[1em] relative hidden overflow-hidden">
+      <nav class="container mx-auto items-center h-full left-0 p-[1em] relative hidden overflow-hidden select-none">
           <div class="absolute right-16 top-20">
             <p class="press-start-2p-regular">{{time}}</p>
           </div>
@@ -235,6 +235,10 @@ useHead({
 
 .nav-item {
   @apply w-fit
+}
+
+.nav-link:hover {
+  @apply opacity-100
 }
 
 .nav-link-active {

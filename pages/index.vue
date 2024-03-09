@@ -54,9 +54,9 @@ onMounted(() => {
 
   function parallax(e: any) {
     document.querySelectorAll(".object").forEach(function (move) {
-      let movingValue = move.getAttribute('data-value') || 1;
+      let movingValue = parseFloat(move.getAttribute('data-value') as any);
       let x = (e.clientX * movingValue) / 250;
-      let y = (e.clientY * movingValue) / 250;
+      let y = ((e.clientY * movingValue) / 250)+6;
       gsap.to(move, {x: x, y: y, duration: 1, ease: "elastic"});
     });
   }
