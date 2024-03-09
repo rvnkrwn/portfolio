@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <nav class="wrapper items-center !h-full left-0 relative hidden overflow-hidden select-none p-[1em] md:p-[2em]">
+      <nav class="wrapper items-center !h-full left-0 relative hidden overflow-hidden  p-[1em] md:p-[2em]">
           <div class="absolute right-16 top-20">
             <p class="press-start-2p-regular">{{time}}</p>
           </div>

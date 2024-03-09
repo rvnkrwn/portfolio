@@ -6,6 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    @apply select-none
+}
 
 .wrapper {
     @apply container mx-auto h-fit

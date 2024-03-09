@@ -1,7 +1,7 @@
 <template>
   <div>
     <PreloaderTransition title="Home"/>
-    <section class="fixed grayscale opacity-40 -z-10 h-fit w-full bg-base-300 py-[4em] md:p-0 select-none">
+    <section class="fixed grayscale opacity-40 -z-10 h-fit w-full bg-base-300 py-[4em] md:p-0 md:opacity-80">
       <div class="h-screen container mx-auto flex flex-wrap justify-between items-center relative">
         <img :class="['object absolute top-[0%] -left-[10%] w-[12rem] h-[12rem] sm:w-[14rem] sm:h-[14rem] md:w-[16rem] md:h-[16rem] lg:w-[18rem] lg:h-[18rem] xl:w-[22rem] xl:h-[22rem]']"
              alt=""
@@ -11,13 +11,13 @@
              alt=""
              data-value="-2"
              src="/images/Atom_Sphere_2_0001.png">
-        <img :class="['object absolute top-[15%] left-[20%] w-[12rem] h-[12rem] sm:w-[14rem] sm:h-[14rem] md:w-[16rem] md:h-[16rem] lg:w-[18rem] lg:h-[18rem] xl:w-[22rem] xl:h-[22rem]']"
+        <img :class="['object absolute top-[10%] left-[20%] w-[12rem] h-[12rem] sm:w-[14rem] sm:h-[14rem] md:w-[16rem] md:h-[16rem] lg:w-[18rem] lg:h-[18rem] xl:w-[22rem] xl:h-[22rem]']"
              alt=""
-             data-value="3"
+             data-value="-1"
              src="/images/Atom_Tetra_1_0000.png">
         <img :class="['object absolute top-[45%] -left-[2%] w-[12rem] h-[12rem] sm:w-[14rem] sm:h-[14rem] md:w-[16rem] md:h-[16rem] lg:w-[18rem] lg:h-[18rem] xl:w-[22rem] xl:h-[22rem]']"
              alt=""
-             data-value="5"
+             data-value="-5"
              src="/images/Block_Matrix_x2_0000.png">
         <img :class="['object absolute top-[35%] -right-[10%] w-[12rem] h-[12rem] sm:w-[14rem] sm:h-[14rem] md:w-[16rem] md:h-[16rem] lg:w-[18rem] lg:h-[18rem] xl:w-[22rem] xl:h-[22rem]']"
              alt=""
