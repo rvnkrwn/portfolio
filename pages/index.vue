@@ -18,21 +18,20 @@
     <section class="wrapper">
       <div class="px-[1em] overflow-x-hidden flex items-center justify-center text-center min-h-screen">
         <div class="py-[5em] rounded">
-          <h1 v-if="appName" class="object press-start-2p-regular" data-value="3">
+          <h1 v-if="appName" class="object press-start-2p-regular" data-value="1">
             <span v-for="(char, i) in appName" :key="i"
-                  :class="[i % 2 ? 'hover:text-primary' : '', i % 3 ? 'hover:text-accent' : '', i % 1 ? 'hover:text-secondary' : '', 'transition-all text-3xl sm:text-5xl font-black md:text-7xl']">{{
+                  :class="[i % 2 ? 'hover:text-primary' : '', i % 3 ? 'hover:text-accent' : '', i % 1 ? 'hover:text-secondary' : '', 'transition-all text-3xl sm:text-4xl font-black md:text-5xl']">{{
                 char
               }}</span>
           </h1>
           <br>
-          <p class="montserrat text-lg tracking-wide md:w-[50%] mx-auto object" data-value="4">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa delectus illum inventore necessitatibus
-            porro quaerat quia quidem quisquam sapiente ut.
+          <p class="montserrat text-lg tracking-wide w-full max-w-[40rem] mx-auto object md:text-xl" data-value="1">
+            Unlocking the Digital World: Journey through my personal web portfolio and witness the art of coding unfold. From concept to execution, experience the power of programming as I craft innovative solutions and bring ideas to fruition.
           </p>
-          <div class="p-4 flex gap-4 flex-wrap justify-center">
-            <NuxtLink class="btn btn-outline border-2 rounded-box px-7 object" data-value="3" to="/aboutMe">Learn More
+          <div class="p-4 flex gap-4 flex-wrap justify-center mt-8">
+            <NuxtLink class="btn btn-outline border-2 rounded-box px-7 object" data-value="1" to="/aboutMe">Learn More
             </NuxtLink>
-            <NuxtLink class="btn btn-neutral border-2 rounded-box px-7 object" data-value="3" to="/contacts">Contacts
+            <NuxtLink class="btn btn-neutral border-2 rounded-box px-7 object" data-value="1" to="/contacts">Contacts
             </NuxtLink>
           </div>
         </div>
