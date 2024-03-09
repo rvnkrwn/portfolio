@@ -1,5 +1,5 @@
 <template>
-  <div id="app-preloading" class="fixed h-screen w-full top-0 left-0 z-[99999] bg-base-300 flex items-center justify-center">
+  <div id="app-preloading" class="fixed h-screen select-none w-full top-0 left-0 z-[99999] bg-base-300 flex items-center justify-center">
     <h1 class="text-2xl montserrat md:text-3xl">{{hello}}</h1>
   </div>
 </template>

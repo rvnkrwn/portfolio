@@ -8,11 +8,11 @@
 
 
 .wrapper {
-    @apply container mx-auto w-full px-[1em] h-fit
+    @apply container mx-auto h-fit
 }
 
 .my-padding {
-    @apply py-24
+    @apply py-20
 }
 
 /* fonts */

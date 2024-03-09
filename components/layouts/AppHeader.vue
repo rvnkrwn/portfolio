@@ -2,8 +2,8 @@
   <div>
     <div id="highlight" class="hidden md:block fixed z-[99999] h-12 w-12 rounded-full border border-base-content" />
     <AppPreloading />
-    <header class="fixed z-[9999] w-full h-fit px-[1em] py-[1em] overflow-hidden hover:backdrop-blur">
-      <div class="container mx-auto flex justify-between items-center">
+    <header class="fixed z-[9999] w-full h-fit overflow-hidden">
+      <div class="wrapper flex justify-between items-center hover:backdrop-blur p-[1em] md:p-[2em]">
         <NuxtLink to="/">
           <div class="protest-guerrilla-regular font-semibold text-xl uppercase flex items-center gap-1">
             <h1 class="hover:underline">{{ appName?.split(' ')[0] }}</h1>
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <nav class="container mx-auto items-center h-full left-0 p-[1em] relative hidden overflow-hidden select-none">
+      <nav class="wrapper items-center !h-full left-0 relative hidden overflow-hidden select-none p-[1em] md:p-[2em]">
           <div class="absolute right-16 top-20">
             <p class="press-start-2p-regular">{{time}}</p>
           </div>
@@ -59,14 +59,14 @@
               </NuxtLink>
             </li>
           </ul>
-          <ul class="absolute bottom-28 grid grid-cols-5 gap-2 border-b-2 border-base-content/70 p-1 md:border-b-0 md:border-r-2 md:grid-cols-1 md:right-0">
-            <li class="nav-item"><NuxtLink to="https://instagram.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:instagram" width="36" height="36" /></NuxtLink></li>
-            <li class="nav-item"><NuxtLink to="https://github.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:github" width="36" height="36" /></NuxtLink></li>
-            <li class="nav-item"><NuxtLink to="https://www.linkedin.com/in/rvnkrwn/" class="nav-link opacity-70"><Icon icon="mdi:linkedin" width="36" height="36" /></NuxtLink></li>
-            <li class="nav-item"><NuxtLink to="https://codepen.io/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:codepen" width="36" height="36" /></NuxtLink></li>
-            <li class="nav-item"><NuxtLink to="mailto:rvnkrwn@gmail.com" class="nav-link opacity-70"><Icon icon="mdi:email" width="36" height="36" /></NuxtLink></li>
+          <ul class="absolute bottom-24 right-2 grid gap-2 border-base-content/70 p-1 border-r-2 grid-cols-1">
+            <li><NuxtLink to="https://instagram.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:instagram" width="36" height="36" /></NuxtLink></li>
+            <li><NuxtLink to="https://github.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:github" width="36" height="36" /></NuxtLink></li>
+            <li><NuxtLink to="https://www.linkedin.com/in/rvnkrwn/" class="nav-link opacity-70"><Icon icon="mdi:linkedin" width="36" height="36" /></NuxtLink></li>
+            <li><NuxtLink to="https://codepen.io/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:codepen" width="36" height="36" /></NuxtLink></li>
+            <li><NuxtLink to="mailto:rvnkrwn@gmail.com" class="nav-link opacity-70"><Icon icon="mdi:email" width="36" height="36" /></NuxtLink></li>
           </ul>
-          <div class="absolute bottom-14 montserrat font-semibold text-sm opacity-70 ">
+          <div class="absolute bottom-24 montserrat font-semibold text-sm opacity-70 ">
             <p class="press-start-2p-regular">{{appName}}</p>
             <p>Copyright &copy; {{year}}</p>
           </div>
@@ -142,6 +142,7 @@ const menuFunction = () => {
     tl.to(header, {
       height: '100dvh',
       duration: 0.5,
+      delay: .3,
       onStart: () => {
         navbar?.classList.replace('hidden', 'flex')
         header?.classList.add('h-screen')
@@ -150,11 +151,11 @@ const menuFunction = () => {
         navItems.forEach((navItem) => {
           tl.fromTo(navItem, {
             opacity: 0,
-            translateY: 50
+            translateY: 50,
           }, {
             duration: 0.1,
             opacity: 1,
-            translateY: 0
+            translateY: 0,
           })
         })
       }
