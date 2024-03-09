@@ -3,14 +3,14 @@
     <div id="highlight" class="hidden md:block fixed z-[99999] h-12 w-12 rounded-full border border-base-content" />
     <AppPreloading />
     <header class="fixed z-[9999] w-full h-fit px-[1em] py-[1em] overflow-hidden">
-      <div class="container mx-auto relative p-[1em] backdrop-blur rounded-box flex justify-between items-center">
+      <div class="container mx-auto relative p-[1em] rounded-box flex justify-between items-center hover:backdrop-blur">
         <NuxtLink to="/">
-          <div class="protest-guerrilla-regular font-semibold uppercase flex items-center gap-1">
-            <h1>{{ appName?.split(' ')[0] }}</h1>
+          <div class="protest-guerrilla-regular font-semibold text-xl uppercase flex items-center gap-1">
+            <h1 class="hover:underline">{{ appName?.split(' ')[0] }}</h1>
             <span>-</span>
             <div class="inner-headings h-[30px] overflow-hidden leading-[30px]">
             <span>
-              JS Dev <br/>
+              Copyright &copy; {{year}} <br/>
               BE Dev <br/>
               FE Dev <br/>
               {{ appName?.split(' ')[1] }} <br/>
@@ -18,17 +18,20 @@
             </div>
           </div>
         </NuxtLink>
-        <div class="flex items-center gap-2">
-          <div id="menu-toggle" class="cursor-pointer">
+        <div class="flex items-center">
+          <div id="menu-toggle" class="cursor-pointer toggle-hover">
             <Icon v-if="isOpen" height="24" icon="line-md:menu-to-close-transition" width="24"/>
             <Icon v-else height="24" icon="line-md:close-to-menu-transition" width="24"/>
           </div>
-          <div class="cursor-pointer" @click="darkTheme = !darkTheme">
+          <div class="cursor-pointer toggle-hover" @click="darkTheme = !darkTheme">
             <Icon v-if="darkTheme" height="24" icon="line-md:moon-alt-to-sunny-outline-loop-transition" width="24"/>
             <Icon v-else height="24" icon="line-md:sunny-outline-to-moon-alt-loop-transition" width="24"/>
           </div>
         </div>
-        <nav class="absolute top-14 items-center w-full min-h-[80vh] left-0 p-[1em] hidden">
+        <nav class="absolute top-12 items-center w-full min-h-[80vh] left-0 p-[1em] hidden">
+          <div class="absolute right-10 top-16">
+            <p class="press-start-2p-regular">{{time}}</p>
+          </div>
           <ul class="text-5xl protest-guerrilla-regular tracking-wider font-extrabold md:text-7xl md:font-black">
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/">Home
@@ -55,6 +58,17 @@
               </NuxtLink>
             </li>
           </ul>
+          <ul class="absolute bottom-4 grid grid-cols-5 gap-2 border-b-2 border-base-content/70 p-1 md:border-r-2 md:border-b-0 md:grid-cols-1 md:right-0">
+            <li class="nav-item"><NuxtLink to="https://instagram.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:instagram" width="36" height="36" /></NuxtLink></li>
+            <li class="nav-item"><NuxtLink to="https://github.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:github" width="36" height="36" /></NuxtLink></li>
+            <li class="nav-item"><NuxtLink to="https://www.linkedin.com/in/rvnkrwn/" class="nav-link opacity-70"><Icon icon="mdi:linkedin" width="36" height="36" /></NuxtLink></li>
+            <li class="nav-item"><NuxtLink to="https://codepen.io/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:codepen" width="36" height="36" /></NuxtLink></li>
+            <li class="nav-item"><NuxtLink to="mailto:rvnkrwn@gmail.com" class="nav-link opacity-70"><Icon icon="mdi:email" width="36" height="36" /></NuxtLink></li>
+          </ul>
+          <div class="absolute -bottom-10 montserrat font-semibold text-sm opacity-70 ">
+            <p class="press-start-2p-regular">{{appName}}</p>
+            <p>Copyright &copy; {{year}}</p>
+          </div>
         </nav>
       </div>
     </header>
@@ -68,6 +82,8 @@ import {Icon} from "@iconify/vue";
 // const config = useRuntimeConfig()
 const darkTheme = ref(false)
 const isOpen = ref(false)
+const year = new Date().getFullYear()
+const time = ref('')
 
 const appName = computed(() => {
   return "Revan Kurniawan"
@@ -86,7 +102,10 @@ onMounted(() => {
       })
     })
     navLink.addEventListener('click', menuFunction)
+
   })
+
+  setInterval(updateTime, 1000);
 
   gsap.set('#highlight', {x: 4, color: "white", duration: 3});
 
@@ -100,6 +119,18 @@ onMounted(() => {
     });
   });
 })
+
+const updateTime = () => {
+  const currentTime = new Date();
+  const hours = currentTime.getHours();
+  let minutes: any = currentTime.getMinutes();
+  let seconds: any = currentTime.getSeconds();
+
+  minutes = String((minutes < 10 ? "0" : "") + minutes);
+  seconds = String((seconds < 10 ? "0" : "") + seconds);
+
+  time.value =  hours + ":" + minutes + ":" + seconds; // Adicionei isso para retornar a hora atual
+}
 
 const menuFunction = () => {
   let tl = gsap.timeline()
@@ -154,6 +185,9 @@ useHead({
   animation: animation 10s ease infinite;
 }
 
+.toggle-hover {
+  @apply p-2 rounded-full hover:bg-base-content hover:text-base-300
+}
 
 @keyframes animation {
   0%, 100% {

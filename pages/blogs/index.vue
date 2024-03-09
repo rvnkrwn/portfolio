@@ -1,7 +1,7 @@
 <template>
   <div>
     <PreloaderTransition title="Blogs" />
-    <section class="wrapper">
+    <section class="wrapper my-padding">
       <div class="px-[1em]">
         Hello
       </div>

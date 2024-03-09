@@ -1,23 +1,23 @@
 <template>
   <div>
     <PreloaderTransition title="Home"/>
-    <section class="absolute -z-10 h-screen w-full bg-base-300 overflow-hidden py-[4em] md:p-0">
+    <section class="fixed -z-10 h-screen w-full bg-base-300 py-[4em] md:p-0 select-none">
       <ul class="w-full h-full flex justify-around flex-wrap container mx-auto">
-        <li><img alt="" class="object w-48 sm:w-72 lg:w-80 xl:w-96 2xl:w-[100%]" data-value="2"
+        <li><img alt="" class="object -mt-10 w-60 sm:w-72 lg:w-80 xl:w-96 2xl:w-[80%]" data-value="-8"
                  src="/images/Arrow_Down0001.png"></li>
-        <li><img alt="" class="object w-48 sm:w-72 lg:w-80 xl:w-96 2xl:w-[100%]" data-value="3"
+        <li><img alt="" class="object mt-10 w-52 sm:w-72 lg:w-80 xl:w-96 2xl:w-[90%]" data-value="6"
                  src="/images/Atom_Tetra_1_0000.png"></li>
-        <li><img alt="" class="object w-48 sm:w-72 lg:w-80 xl:w-96 2xl:w-[100%]" data-value="4"
+        <li><img alt="" class="object mt-0 w-44 sm:w-72 lg:w-80 xl:w-60 2xl:w-[85%]" data-value="-9"
                  src="/images/Arrow_Up0003.png"></li>
-        <li><img alt="" class="object w-48 sm:w-72 lg:w-80 xl:w-96 2xl:w-[100%]" data-value="5"
+        <li><img alt="" class="object -mt-8 w-64 sm:w-72 lg:w-80 xl:w-80 2xl:w-[80%]" data-value="7"
                  src="/images/Block_8x8x8_Rounded0001.png"></li>
-        <li><img alt="" class="object w-48 sm:w-72 lg:w-80 xl:w-96 2xl:w-[100%]" data-value="4"
+        <li><img alt="" class="object mt-2 w-52 sm:w-72 lg:w-80 xl:w-96 2xl:w-[90%]" data-value="-10"
                  src="/images/Block_Cage_2_0001.png"></li>
       </ul>
     </section>
-    <section class="wrapper z-10">
-      <div class="px-[1em] overflow-y-auto min-h-full h-fit flex items-center justify-center text-center">
-        <div class="bg-base-300/20 backdrop-blur py-[5em] rounded">
+    <section class="wrapper">
+      <div class="px-[1em] overflow-x-hidden flex items-center justify-center text-center min-h-screen">
+        <div class="py-[5em] rounded">
           <h1 v-if="appName" class="object press-start-2p-regular" data-value="3">
             <span v-for="(char, i) in appName" :key="i"
                   :class="[i % 2 ? 'hover:text-primary' : '', i % 3 ? 'hover:text-accent' : '', i % 1 ? 'hover:text-secondary' : '', 'transition-all text-3xl sm:text-5xl font-black md:text-7xl']">{{
@@ -57,7 +57,7 @@ onMounted(() => {
       let movingValue = move.getAttribute('data-value') || 1;
       let x = (e.clientX * movingValue) / 250;
       let y = (e.clientY * movingValue) / 250;
-      gsap.to(move, {x: x, y: y, duration: 0.3, ease: "power2.out"});
+      gsap.to(move, {x: x, y: y, duration: 1, ease: "elastic"});
     });
   }
 })
