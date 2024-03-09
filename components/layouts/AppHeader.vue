@@ -10,7 +10,7 @@
             <span>-</span>
             <div class="inner-headings h-[30px] overflow-hidden leading-[30px]">
             <span>
-              Copyright &copy; {{year}} <br/>
+              &copy; {{year}} <br/>
               BE Dev <br/>
               FE Dev <br/>
               {{ appName?.split(' ')[1] }} <br/>
@@ -59,7 +59,7 @@
               </NuxtLink>
             </li>
           </ul>
-          <ul class="absolute bottom-28 grid grid-cols-5 gap-2 border-b-2 border-base-content/70 p-1 md:border-b-0 md:grid-cols-1 md:right-0">
+          <ul class="absolute bottom-28 grid grid-cols-5 gap-2 border-b-2 border-base-content/70 p-1 md:border-b-0 md:border-r-2 md:grid-cols-1 md:right-0">
             <li class="nav-item"><NuxtLink to="https://instagram.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:instagram" width="36" height="36" /></NuxtLink></li>
             <li class="nav-item"><NuxtLink to="https://github.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:github" width="36" height="36" /></NuxtLink></li>
             <li class="nav-item"><NuxtLink to="https://www.linkedin.com/in/rvnkrwn/" class="nav-link opacity-70"><Icon icon="mdi:linkedin" width="36" height="36" /></NuxtLink></li>
@@ -164,6 +164,7 @@ const menuFunction = () => {
         opacity: 0
       },{
         duration: 0.1,
+        delay: 0.2,
         opacity: 1
       })
     })
