@@ -33,7 +33,7 @@
           <div class="absolute right-16 top-20">
             <p class="press-start-2p-regular">{{time}}</p>
           </div>
-          <ul class="text-5xl -mt-20 protest-guerrilla-regular tracking-wider font-extrabold md:text-7xl md:font-black">
+          <ul class="text-5xl -mt-28 protest-guerrilla-regular tracking-wider font-extrabold md:text-7xl md:font-black">
             <li class="nav-item">
               <NuxtLink active-class="nav-link-active" class="nav-link opacity-70" to="/">Home
               </NuxtLink>
@@ -59,14 +59,14 @@
               </NuxtLink>
             </li>
           </ul>
-          <ul class="absolute bottom-24 right-2 grid gap-2 border-base-content/70 p-1 border-r-2 grid-cols-1">
+          <ul class="absolute bottom-32 right-2 grid gap-2 border-base-content/70 p-1 border-r-2 grid-cols-1">
             <li><NuxtLink to="https://instagram.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:instagram" width="36" height="36" /></NuxtLink></li>
             <li><NuxtLink to="https://github.com/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:github" width="36" height="36" /></NuxtLink></li>
             <li><NuxtLink to="https://www.linkedin.com/in/rvnkrwn/" class="nav-link opacity-70"><Icon icon="mdi:linkedin" width="36" height="36" /></NuxtLink></li>
             <li><NuxtLink to="https://codepen.io/rvnkrwn" class="nav-link opacity-70"><Icon icon="mdi:codepen" width="36" height="36" /></NuxtLink></li>
             <li><NuxtLink to="mailto:rvnkrwn@gmail.com" class="nav-link opacity-70"><Icon icon="mdi:email" width="36" height="36" /></NuxtLink></li>
           </ul>
-          <div class="absolute bottom-24 montserrat font-semibold text-sm opacity-70 ">
+          <div class="absolute bottom-32 montserrat font-semibold text-sm opacity-70 ">
             <p class="press-start-2p-regular">{{appName}}</p>
             <p>Copyright &copy; {{year}}</p>
           </div>
