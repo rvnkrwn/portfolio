@@ -2,7 +2,7 @@
   <div>
     <div id="highlight" class="hidden md:block fixed z-[99999] h-12 w-12 rounded-full border border-base-content" />
     <AppPreloading />
-    <header class="fixed z-[9999] w-full h-fit bg-base-300 px-[1em] py-[1em] overflow-hidden">
+    <header class="fixed z-[9999] w-full h-fit px-[1em] py-[1em] overflow-hidden hover:backdrop-blur">
       <div class="container mx-auto flex justify-between items-center">
         <NuxtLink to="/">
           <div class="protest-guerrilla-regular font-semibold text-xl uppercase flex items-center gap-1">
@@ -175,11 +175,13 @@ const menuFunction = () => {
     })
     tl.to(header, {
       height: 'auto',
-      duration: 0.5,
+      duration: 0.2,
       delay: 0,
+      onStart: () => {
+        navbar?.classList.replace('flex', 'hidden')
+      },
       onComplete: () => {
         header?.classList.remove('bg-base-300')
-        navbar?.classList.replace('flex', 'hidden')
         isOpen.value = false
       }
     })

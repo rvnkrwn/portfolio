@@ -3,13 +3,13 @@
     <PreloaderTransition title="Home"/>
     <section class="fixed -z-10 h-screen w-full bg-base-300 py-[4em] md:p-0 select-none">
       <ul class="w-full h-full flex justify-around flex-wrap container mx-auto">
-        <li><img alt="" class="object -mt-10 w-60 sm:w-72 lg:w-80 xl:w-96 2xl:w-[80%]" data-value="-8"
+        <li><img alt="" class="object -mt-10 w-60 hidden sm:block sm:w-72 lg:w-80 xl:w-96 2xl:w-[80%]" data-value="-8"
                  src="/images/Arrow_Down0001.png"></li>
         <li><img alt="" class="object mt-10 w-52 sm:w-72 lg:w-80 xl:w-96 2xl:w-[90%]" data-value="6"
                  src="/images/Atom_Tetra_1_0000.png"></li>
         <li><img alt="" class="object mt-0 w-44 sm:w-72 lg:w-80 xl:w-60 2xl:w-[85%]" data-value="-9"
                  src="/images/Arrow_Up0003.png"></li>
-        <li><img alt="" class="object -mt-8 w-64 sm:w-72 lg:w-80 xl:w-80 2xl:w-[80%]" data-value="7"
+        <li><img alt="" class="object hidden sm:block -mt-8 w-64 sm:w-72 lg:w-80 xl:w-80 2xl:w-[80%]" data-value="7"
                  src="/images/Block_8x8x8_Rounded0001.png"></li>
         <li><img alt="" class="object mt-2 w-52 sm:w-72 lg:w-80 xl:w-96 2xl:w-[90%]" data-value="-10"
                  src="/images/Block_Cage_2_0001.png"></li>
