@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper-dashboard">
-    <aside class="hidden fixed z-[999] transition-all lg:relative lg:block">
+    <aside class="hidden fixed z-[999] lg:relative lg:block">
       <div id="wrapper-aside" class="p-[1em] relative h-full overflow-x-hidden">
         <section>
           <div class="px-2 py-4 flex items-center gap-2">
@@ -55,7 +55,7 @@
     </aside>
     <header>
       <div class="flex items-center gap-4 justify-between w-full">
-        <div class="lg:hidden" @click="openSidebar">
+        <div class="lg:hidden cursor-pointer" @click="openSidebar">
           <Icon v-if="isOpen" height="24" icon="line-md:menu-to-close-transition" width="24"/>
           <Icon v-else height="24" icon="line-md:close-to-menu-transition" width="24"/>
         </div>
@@ -92,6 +92,7 @@ const openSidebar = () => {
       translateX: '100%'
     }, {
       translateX: '0%',
+      duration: .3,
       onStart: () => {
         document.querySelector('aside')?.classList.replace('hidden', 'block')
         isOpen.value = true
@@ -102,11 +103,14 @@ const openSidebar = () => {
       translateX: '0%'
     }, {
       translateX: '110%',
+      duration: .3,
+      onStart: () => {
+        isOpen.value = false
+      } ,
       onComplete: () => {
         const aside = document.querySelector('aside')
         aside?.classList.replace('block', 'hidden')
         if (aside) aside.style.transform = 'translateX(0)';
-        isOpen.value = false
       }
     })
   }
