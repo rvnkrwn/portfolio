@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper-dashboard">
-    <aside class="hidden fixed z-[999] lg:relative lg:block">
+    <aside class="hidden fixed z-[999] transition-all lg:relative lg:block">
       <div id="wrapper-aside" class="p-[1em] relative h-full overflow-x-hidden">
         <section>
           <div class="px-2 py-4 flex items-center gap-2">
