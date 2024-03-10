@@ -3,7 +3,7 @@
     <aside class="hidden fixed z-[999] lg:relative lg:block">
       <div id="wrapper-aside" class="p-[1em] relative h-full overflow-x-hidden">
         <section>
-          <div class="px-2 py-4 flex items-center gap-2">
+          <div class="px-2 py-2 lg:py-4 flex items-center gap-2">
             <Icon class="inline-block" height="34" icon="arcticons:famistudio" width="34"/>
             <h1 class="montserrat font-black text-xl tracking-wide">R-STUDIO</h1>
           </div>
@@ -15,40 +15,40 @@
               <li>
                 <NuxtLink active-class="active" class="btn shadow-none flex items-center justify-start gap-2 px-4 py-2 rounded-box" to="/admin">
                   <Icon class="inline-block" height="20" icon="ri:dashboard-horizontal-line" width="20"/>
-                  <span class="text-base">Dashboard</span>
+                  <span class="text-sm md:text-base">Dashboard</span>
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink active-class="active" class="btn shadow-none flex items-center justify-start gap-2 px-4 py-2 rounded-box" to="/admin/blog">
                   <Icon class="inline-block" height="20" icon="ri:blogger-line" width="20"/>
-                  <span class="text-base">Blog</span>
+                  <span class="text-sm md:text-base">Blog</span>
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink active-class="active" class="btn shadow-none flex items-center justify-start gap-2 px-4 py-2 rounded-box"
                           to="/admin/notifications">
                   <Icon class="inline-block" height="20" icon="ri:notification-2-line" width="20"/>
-                  <span class="text-base">Notifications</span>
+                  <span class="text-sm md:text-base">Notifications</span>
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink active-class="active" class="btn shadow-none flex items-center justify-start gap-2 px-4 py-2 rounded-box"
                           to="/admin/setting">
                   <Icon class="inline-block" height="20" icon="ri:settings-line" width="20"/>
-                  <span class="text-base">Setting</span>
+                  <span class="text-sm lg:text-base">Setting</span>
                 </NuxtLink>
               </li>
             </ul>
           </nav>
         </section>
-        <section class="flex flex-col items-center">
+        <section class="flex flex-col items-center montserrat">
           <div class="avatar">
             <div class="w-14 rounded-full">
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"  alt=""/>
             </div>
           </div>
-          <h1>Revan Kurniawan</h1>
-          <small>rvnkrwn@gmail.com</small>
+          <h1 class="mt-2 font-semibold text-sm">Revan Kurniawan</h1>
+          <small class="text-xs text-base-content/60">rvnkrwn@gmail.com</small>
           <button class="btn btn-outline btn-sm mt-4">Logout</button>
         </section>
       </div>
@@ -128,7 +128,7 @@ useHead({
 #wrapper-dashboard {
   display: grid;
   grid-template-columns: 20em auto;
-  grid-template-rows: 5em
+  grid-template-rows: 4.5em
                       auto;
   grid-template-areas:
                 "header header"
@@ -146,7 +146,7 @@ aside {
 
 aside #wrapper-aside {
   display: grid;
-  grid-template-rows: 3em 1em auto 10em;
+  grid-template-rows: 2em 1em auto 10em;
   gap: 20px;
 }
 
@@ -180,6 +180,12 @@ a.active {
   aside {
     position: relative;
     grid-area: sidebar;
+  }
+
+  aside #wrapper-aside {
+    display: grid;
+    grid-template-rows: 3em 1em auto 10em;
+    gap: 20px;
   }
 
   aside, header {
