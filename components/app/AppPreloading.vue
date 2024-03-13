@@ -1,10 +1,12 @@
 <template>
-  <div id="app-preloading" class="fixed h-screen select-none w-full top-0 left-0 z-[99999] bg-base-300 flex items-center justify-center">
+  <div id="app-preloading" class="fixed h-screen select-none w-full top-0 left-0 z-[999999] bg-base-300 flex items-center justify-center">
     <h1 class="text-2xl montserrat md:text-3xl">{{hello}}</h1>
+    <p v-if="props.text">{{props.text}}</p>
   </div>
 </template>
 
 <script setup lang="ts">
+const props = defineProps(['duration', 'text'])
 import {gsap} from "gsap"
 const hello = ref('')
 const hellos = [
@@ -35,7 +37,7 @@ onMounted(() => {
 
   tl.to('#app-preloading',{
     delay: 3,
-    duration: 1,
+    duration: Number(props.duration),
     translateY: '-130%',
     onComplete: () => {
       gsap.killTweensOf("#app-preloading")
