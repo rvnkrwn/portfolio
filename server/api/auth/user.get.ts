@@ -1,9 +1,7 @@
-import {H3Event} from "h3";
+import { H3Event } from 'h3'
 
-export default defineEventHandler(async (event: H3Event) => {
-    try {
-
-    } catch (e) {
-
-    }
+export default defineEventHandler((event: H3Event) => {
+  return {
+    user: event.context.auth
+  }
 })
