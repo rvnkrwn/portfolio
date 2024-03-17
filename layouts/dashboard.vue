@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import DashboardHeader from '~/components/layouts/DashboardHeader.vue'
 
-const {isLoading} = useAuth()
+const { isLoading } = useAuth()
 const isLoadingNow = computed(() => {
   return isLoading().value
 })

@@ -9,7 +9,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     '/admin/blog/create'
   ]
 
-  if (endpoints.some(endpoint => to.path === endpoint) && !Boolean(isLoggedIn().value)) {
+  if (endpoints.includes(to.path) && !isLoggedIn().value) {
     return navigateTo('/admin/login')
   } else if (to.path === '/admin/login' && Boolean(isLoggedIn().value)) {
     return navigateTo('/admin')

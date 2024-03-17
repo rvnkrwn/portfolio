@@ -7,7 +7,7 @@ const makeSlug = (title: string) => {
 export default defineEventHandler(async (event: H3Event) => {
   try {
     const user = event.context.auth
-    const {title, content} = await readBody(event)
+    const { title, content } = await readBody(event)
 
     if (!title || !content) {
       return sendError(event, createError({
@@ -20,10 +20,10 @@ export default defineEventHandler(async (event: H3Event) => {
       author_id: user.userId as number,
       slug: makeSlug(title),
       title: title as string,
-      content: content as string,
+      content: content as string
     }
 
-    await prisma.blogs.create({data: payload})
+    await prisma.blogs.create({ data: payload })
     return {
       message: 'successfully created'
     }

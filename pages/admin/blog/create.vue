@@ -99,7 +99,7 @@
 
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2'
 
 const title = ref('')
 const content = ref('')
@@ -173,21 +173,21 @@ const submit = async () => {
       credentials: 'include'
     })
     await Swal.fire({
-      position: "top-end",
-      icon: "success",
+      position: 'top-end',
+      icon: 'success',
       title: response?.message,
       showConfirmButton: false,
       timer: 1500
-    });
+    })
     console.log(response)
   } catch (error) {
     await Swal.fire({
-      position: "top-end",
-      icon: "error",
+      position: 'top-end',
+      icon: 'error',
       title: error?.statusMessage,
       showConfirmButton: false,
       timer: 1500
-    });
+    })
   }
 }
 

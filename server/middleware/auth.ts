@@ -17,7 +17,7 @@ export default defineEventHandler(async (event: H3Event) => {
       return pattern.match(event.node.req.url as string)
     })
 
-    if (!isHandlerByThisMiddleware || (event.method === "GET" && event.node.req.url === '/api/blog')) { return }
+    if (!isHandlerByThisMiddleware || (event.method === 'GET' && event.node.req.url === '/api/blog')) { return }
 
     const token = event.req.headers.authorization?.split(' ')[1]
 
